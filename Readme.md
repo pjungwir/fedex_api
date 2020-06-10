@@ -1,3 +1,6 @@
+# SUPER DUPER IMPORTANT!
+This is renamed version of the the 'Fedex' gem. 
+
 # IMPORTANT!!
 I plan a major refactor to this gem. Sorry but at this moment I am not merging PR's. I appreciate your effort but need some time to catch up. Thanks!! 
 
@@ -102,12 +105,12 @@ payment_options = {
 }
 ```
 
-Create a `Fedex::Shipment` object using your FedEx credentials; mode should be
+Create a `FedexApi::Shipment` object using your FedEx credentials; mode should be
 either production or development depending on what Fedex environment you want to use.
 
 ```ruby
 require 'fedex'
-fedex = Fedex::Shipment.new(:key => 'xxx',
+fedex = FedexApi::Shipment.new(:key => 'xxx',
                             :password => 'xxxx',
                             :account_number => 'xxxx',
                             :meter => 'xxx',
@@ -131,7 +134,7 @@ Fedex provides multiple total values; `total_net_charge` is the final amount you
 ```ruby
     $ rate.total_net_charge => "34.03"
     # Complete response
-    $ <Fedex::Rate:0x1019ba5f8
+    $ <FedexApi::Rate:0x1019ba5f8
           @total_net_charge="34.03",
           @total_surcharges="1.93",
           @total_billing_weight="8.0 LB",
@@ -305,7 +308,7 @@ To track a shipment:
 
 ```ruby
 results = fedex.track(:tracking_number => "1234567890123")
-# => [#<Fedex::TrackingInformation>]
+# => [#<FedexApi::TrackingInformation>]
 
 # Pull the first result from the returned array
 #
@@ -396,10 +399,10 @@ puts service[:options]
 # Services/Options Available
 
 ```ruby
-Fedex::Request::Base::SERVICE_TYPES
-Fedex::Request::Base::PACKAGING_TYPES
-Fedex::Request::Base::DROP_OFF_TYPES
-Fedex::Request::Base::CARRIER_CODES
+FedexApi::Request::Base::SERVICE_TYPES
+FedexApi::Request::Base::PACKAGING_TYPES
+FedexApi::Request::Base::DROP_OFF_TYPES
+FedexApi::Request::Base::CARRIER_CODES
 ````
 
 # Contributors:
