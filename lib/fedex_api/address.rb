@@ -3,7 +3,7 @@ module FedexApi
 
     attr_reader :changes, :score, :confirmed, :available, :status, :residential,
                 :business, :company, :street_lines, :city, :state, 
-                :province_code, :postal_code, :country_code
+                :province_code, :postal_code, :country_code, :options
 
     def initialize(options)
       @changes   = options[:changes]
