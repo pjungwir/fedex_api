@@ -5,7 +5,7 @@ module FedexApi
     class Pickup < Base
       def initialize(credentials, options={})
         requires!(options, :packages, :ready_timestamp, :close_time, :carrier_code, :country_relationship)
-        @debug = ENV['DEBUG'] == 'true'
+        @debug = ENV['FEDEX_DEBUG'] == 'true'
 
         @credentials = credentials
         @packages = options[:packages]

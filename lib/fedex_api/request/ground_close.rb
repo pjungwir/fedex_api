@@ -13,7 +13,7 @@ module FedexApi
         @credentials = credentials
         @up_to_time = options[:up_to_time]
         @filename = options[:filename]
-        @debug = ENV['DEBUG'] == 'true'
+        @debug = ENV['FEDEX_DEBUG'] == 'true'
       end
 
       def process_request

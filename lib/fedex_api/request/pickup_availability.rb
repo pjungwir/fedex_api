@@ -6,7 +6,7 @@ module FedexApi
 
       def initialize(credentials, options={})
         requires!(options, :country_code, :request_type, :carrier_code)
-        @debug = ENV['DEBUG'] == 'true'
+        @debug = ENV['FEDEX_DEBUG'] == 'true'
 
         @credentials = credentials
         
